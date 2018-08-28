@@ -1,0 +1,33 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+}
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+    apply plugin: 'eclipse-wtp'
+    apply plugin: 'idea'
+    sourceCompatibility = 1.8
+
+    version = '0.1-SNAPSHOT'
+
+    repositories {
+        jcenter()
+    }
+
+    sourceSets {
+        main {
+            resources.srcDirs = ["src/main/java", "src/main/resources"]
+        }
+    }
+
+    dependencies {
+        testCompile group: 'junit', name: 'junit', version: '4.12'
+    }
+
+}
+
+
+

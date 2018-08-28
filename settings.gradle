@@ -1,0 +1,5 @@
+rootProject.name = 'algorithm'
+include 'soft_dev_engineer'
+include 'design_pattern'
+include 'core'
+
