@@ -27,13 +27,16 @@ public class PeriodRead {
             @Override
             public void run() {
                 System.out.println("Cancelled");
-                myHndl.cancel(true);
+                //myHndl.cancel(true);
             }
         }, 10, TimeUnit.MILLISECONDS);
     }
 
     public static void main(String[] args) throws InterruptedException {
         WorkUnit<String> msg1 = new WorkUnit<>("Vinh");
+        lbq.put(msg1);
+
+        msg1 = new WorkUnit<>("Nhu");
         lbq.put(msg1);
 
         PeriodRead periodRead = new PeriodRead();
