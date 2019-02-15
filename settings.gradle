@@ -1,5 +1,4 @@
-rootProject.name = 'algorithm'
-include 'soft_dev_engineer'
+rootProject.name = 'soft_dev_engineer'
 include 'design_pattern'
 include 'core'
 
