@@ -15,7 +15,6 @@ class Demonstration {
                     } catch (InterruptedException e) {
 
                     }
-
                 }
             }
         });
