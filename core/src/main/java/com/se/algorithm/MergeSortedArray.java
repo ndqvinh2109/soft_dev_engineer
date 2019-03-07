@@ -42,4 +42,17 @@ public class MergeSortedArray {
         // write your code here
         return result; // make a new resultant array and return your results in that
     }
+
+    public static void main(String args[]) {
+
+        int[] arr1 = {1,12,14,17,23}; // creating array 1
+        int[] arr2 = {11,19,27};  // creating array 2
+
+        int[] arr3 = mergeArrays(arr1, arr2); // calling mergeArrays
+
+        System.out.print("Arrays after merging: ");
+        for(int i=0; i < arr1.length + arr2.length; i++) {
+            System.out.print(arr3[i] + " ");
+        }
+    }
 }
