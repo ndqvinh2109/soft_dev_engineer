@@ -1,5 +1,6 @@
 package com.se.algorithm;
 
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,25 +31,12 @@ public class CheckSum {
             }
         }
 
-
         return result;   // return the elements in the array whose sum is equal to the value passed as parameter
     }
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws UnsupportedEncodingException {
 
-        int value = 9;
-        int[] arr1 = {2, 4, 5, 7, 8};
-        int[] arr2 = findSum(arr1, value);
-        int num1 = arr2[0];
-        int num2 = arr2[1];
 
-        if((num1 + num2) != value)
-            System.out.println("Not Found");
-        else {
-            System.out.println("Number 1 = " + num1);
-            System.out.println("Number 2 = " + num2);
-            System.out.println("Sum = " +  (num1 + num2) );
 
-        }
     }
 }

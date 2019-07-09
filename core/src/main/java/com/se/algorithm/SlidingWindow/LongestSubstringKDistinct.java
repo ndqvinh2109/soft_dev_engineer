@@ -8,24 +8,31 @@ public class LongestSubstringKDistinct {
     // Longest Substring with K Distinct Characters
     public static int findLength(String str, int k) {
         // TODO: Write your code here
-        Map<Character, Integer> characterIntegerMap = new HashMap<>();
-        int startWindow = 0;
-        int maxLength = 0;
 
-        for(int endWindow = 0; endWindow < str.length(); endWindow++) {
-            char endChar = str.charAt(endWindow);
-            characterIntegerMap.put(endChar, characterIntegerMap.getOrDefault(endChar, 0) + 1);
+        Map<Character, Integer> characterIntegerMap = new HashMap<>();
+        int windowStart = 0;
+        int maxLength = 0;
+        for(int windowEnd = 0; windowEnd < str.length(); windowEnd ++) {
+
+            if(!characterIntegerMap.containsKey(str.charAt(windowEnd))) {
+                characterIntegerMap.put(str.charAt(windowEnd), 1);
+            } else {
+                characterIntegerMap.put(str.charAt(windowEnd), characterIntegerMap.get(str.charAt(windowEnd)) + 1);
+            }
 
             while(characterIntegerMap.size() > k) {
-                char starChar = str.charAt(startWindow);
-                characterIntegerMap.put(starChar, characterIntegerMap.get(starChar) - 1);
-                if(characterIntegerMap.get(starChar) == 0) {
-                    characterIntegerMap.remove(starChar);
+                characterIntegerMap.put(str.charAt(windowStart), characterIntegerMap.get(str.charAt(windowStart)) - 1);
+                if(characterIntegerMap.get(str.charAt(windowStart)) == 0) {
+                    characterIntegerMap.remove(str.charAt(windowStart));
                 }
-                startWindow ++;
+                windowStart ++;
             }
-            maxLength = Math.max(maxLength, endWindow - startWindow + 1);
+
+            maxLength = Math.max(maxLength, windowEnd-windowStart+1);
+
+
         }
+
         return maxLength;
     }
 
